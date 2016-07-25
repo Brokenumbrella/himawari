@@ -1,0 +1,38 @@
+{% extends "app/layout.html" %}
+
+{% block content %}
+
+<h1>{{ title }}</h1>
+
+{% if current_user and current_user.is_authenticated %}
+    <p><a href="{% url "article_edit" article.pk %}">編集</a></p>
+{% endif %}
+
+<table class="attr">
+    <tr>
+        <th width="150">タイトル</th>
+        <td>{{ article.title }}</td>
+    </tr>
+    <tr>
+        <th>本文</th>
+        <td>{{ article.body|linebreaksbr }}</td>
+    </tr>
+    <tr>
+        <th>掲載開始日時</th>
+        <td>{{ article.released_at|date:"Y/m/d G:i" }}</td>
+    </tr>
+    <tr>
+        <th>掲載終了日時</th>
+        <td>
+            {% if article.expired_at %}
+                {{ article.expired_at|date:"Y/m/d G:i" }}   
+            {% endif %}
+        </td>
+    </tr>
+    <tr>
+        <th>会員限定</th>
+        <td>{% if article.member_only %} ○ {% else %} － {% endif %}</td>
+    </tr>
+</table>
+
+{% endblock %}

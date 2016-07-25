@@ -1,0 +1,22 @@
+{% extends "app/layout.html" %}
+
+{% block content %}
+
+<h1>{{ title }}</h1>
+
+{% if votes.count %}
+{% for vote in votes %}
+    <ul>
+        <li>
+            <a href="{% url 'entry_detail' vote.entry.pk %}">{{vote.entry.title}}</a>
+            by <a href="{% url 'entry_member' vote.entry.member.pk %}">{{ vote.entry.member.name }}</a>
+             - <a href="{% url 'unlike_entry' vote.entry.pk %}">削除</a>
+        </li>
+    </ul>
+{% endfor %}
+{% else %}
+<p>記事がありません。</p>
+{% endif %}
+
+
+{% endblock %}

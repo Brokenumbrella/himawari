@@ -1,0 +1,30 @@
+<img src="{{ STATIC_URL }}app/images/logo.gif" width="310" height="48" alt="Sun Flower"/>
+{% if current_user and current_user.is_authenticated %}
+<p class="member">
+    <a href="{% url 'account_detail' member_id=current_user.pk %}">{{ current_user.name }}さん</a> |
+    <a href="{% url 'logout' %}">ログアウト</a>
+</p>
+
+{% endif %}
+<div class="menubar">
+    {% if current_page != '/' %} <a href="{% url 'home' %}"> {% else %} <span> {% endif %}
+    TOP
+    {% if current_page != '/' %} </a> {% else %} </span> {% endif %}
+    &nbsp; |&nbsp; 
+    {% if current_page != '/articlelist/' %} <a href="{% url 'article_list' %}"> {% else %} <span> {% endif %}
+    ニュース
+    {% if current_page != '/articlelist/' %} </a> {% else %} </span> {% endif %}
+    &nbsp; |&nbsp; 
+    {% if current_page != '/entrylist/' %} <a href="{% url 'entry_list' %}"> {% else %} <span> {% endif %}
+    ブログ
+    {% if current_page != '/entrylist/' %} </a> {% else %} </span> {% endif %}
+{% if current_user and current_user.is_authenticated %}
+    &nbsp; |&nbsp; 
+    {% if current_page != '/member_list/' %} <a href="{% url 'member_list' %}"> {% else %} <span> {% endif %}
+    会員名簿
+    {% if current_page != '/member_list/' %} </a> {% else %} </span> {% endif %}
+{% if current_user.is_staff %}
+    &nbsp; |&nbsp; <a href="/admin">管理ページ</a>
+{% endif %}
+{% endif %}
+</div>

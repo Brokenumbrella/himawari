@@ -1,0 +1,50 @@
+/* 表：一覧表示、詳細表示 */
+table.list, table.attr {
+  font-size: 90%;
+  width: 100%;
+}
+
+table.list th, table.attr th {
+  background-color: #499;
+  color: white;
+  font-weight: normal;
+}
+
+table.list td, table.list th,
+table.attr td, table.attr th {
+  padding: 4px;
+}
+
+table.list th {
+  text-align: left;
+}
+
+table.attr th {
+  text-align: right;
+}
+
+table.list td, table.attr td {
+  background-color: #cee;
+}
+
+table.attr ul{
+    margin-left: -3em;
+    list-style-type: none;
+}
+
+table.attr li {
+    float: left;
+/*    margin-bottom : -0.8em; */
+}
+
+ul.errorlist li {
+    clear:both;
+    color: red;
+    margin-bottom : -0.8em;
+}
+
+#id_username,
+#id_password
+{
+    width:120px;
+}

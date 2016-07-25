@@ -1,0 +1,44 @@
+{% extends "app/layout.html" %}
+
+{% block content %}
+
+<h1>{{ title }}</h1>
+
+<form action="" method="GET">{% csrf_token %} 
+    {{ form.search_name }}
+<!--    <label>{{ form.search_name.label }} {{ form.search_anme }}</label> -->
+    <input type="submit" value="検索">
+</form>
+
+{% if current_user and current_user.is_staff %}
+    <p><a href={% url 'member_new' %}>会員の新規登録</a></p>
+{% endif %}
+
+{% if member_list %}
+<table class="list">
+    <tr>
+        <th>背番号</th>
+        <th>ユーザー名</th>
+        <th>氏名</th>
+        {% if current_user and current_user.is_staff %}
+            <th>操作</th>
+        {% endif %}
+    </tr>
+    {% for member in member_list %}
+    <tr>
+        <td style="text-align:right">{{ member.number }}</td>
+        <td><a href="{% url 'member_detail' member_id=member.id %}" >{{ member.name }}</a></td>
+        <td>{{ member.full_name }}</td>
+        {% if current_user and current_user.is_staff %}
+            <td><a href={% url "member_edit" member_id=member.pk %}>編集</a> | <a href={% url "member_delete" member_id=member.pk %}>削除</a></td>
+        {% endif %}
+    </tr>
+    {% endfor %}
+</table>
+{% else %}
+<p>会員情報がありません。</p>
+{% endif %}
+
+{% include 'app/pagination.html' %}
+
+{% endblock %}

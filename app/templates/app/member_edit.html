@@ -1,0 +1,39 @@
+{% extends "app/layout.html" %}
+
+{% block content %}
+
+<h1>{{ title }}</h1>
+
+{% if member_pk %}
+{% if account_mode %}
+    <p><a href='{% url "account_detail" member_id=member_pk %}'>マイアカウントに戻る</a></p>
+{% else %}
+    <p><a href='{% url "member_detail" member_id=member_pk %}'>会員の詳細に戻る</a></p>
+{% endif %}
+{% endif %}
+
+<form action="" method="post" enctype="multipart/form-data" >{% csrf_token %}
+    <table class="attr">
+        {% if imgform and imgform != None %}
+            <tr>
+                <th>{{imgform.image.label}}</th>
+                <td>
+                    <input id="id_image" name="image" type="file" style="margin-bottom:5px"><br />
+                    {% if imgform.instance.image %}
+                        <img src="{{ imgform.instance.image.url }}" alt="{{ imgform.instance.image.url }}" width="120" />
+                        {{imgform.delete_image}}{{imgform.delete_image.label}}
+                    {% endif %}
+                </td>
+            </tr>
+        {% endif %}
+        {% if form %}
+            {{form.as_table}}
+        {% endif %}
+    </table>
+{% if account_mode %}
+    <p>パスワードを変更しないときは、パスワード入力欄を空にしてください。</p>
+{% endif %}
+    <p><input type="submit" class="btn btn-primary" value="{{ submit_title }}"></p>
+</form>
+
+{% endblock %}

@@ -1,0 +1,25 @@
+{% extends "app/layout.html" %}
+
+{% block content %}
+
+<h1>{{ title }}</h1>
+
+{% if current_user and current_user.is_authenticated %}
+    <p><a href='{% url 'entry_new' %}'>ブログ記事の作成</a> | <a href='{% url 'voted_entry' current_user.pk %}'>投票した記事</a></p>
+{% endif %}
+
+{% if entry_list %}
+{% load custom_filter %}
+{% for entry in entry_list %}
+    <h2>{{ entry.title }}</h2>
+    {{ entry.body|cut_text:80 }}
+    <a href="{% url 'entry_detail' entry.pk %}">もっと読む</a>
+    {% include 'app/entry_footer.html' %}
+{% endfor %}
+{% else %}
+<p>ブログがありません。</p>
+{% endif %}
+
+{% include 'app/pagination.html' %}
+
+{% endblock %}

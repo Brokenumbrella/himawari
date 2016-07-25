@@ -1,0 +1,157 @@
+[
+  {
+    "model": "app.Member",
+    "pk": 1,
+    "fields": {
+      "number": 1,
+      "name": "Masaru",
+      "full_name": "佐藤　勝",
+      "email": "Satho@exsample.com",
+      "birthday": "1981-12-01",
+      "gender": 0,
+      "administrator": false,
+      "password":  "pbkdf2_sha256$24000$yDukyZQPKmt6$8AbdF40dcdXvRATbgPeftWzM5GVCecrv1Ceo3B/RZEY="
+    }
+  },
+  {
+    "model": "app.Member",
+    "pk": 2,
+    "fields": {
+      "number": 2,
+      "name": "Katu",
+      "full_name": "山中　勝也",
+      "email": "Katu@exsample.com",
+      "birthday": "1981-12-01",
+      "gender": 0,
+      "administrator": true,
+      "password":  "pbkdf2_sha256$24000$yDukyZQPKmt6$8AbdF40dcdXvRATbgPeftWzM5GVCecrv1Ceo3B/RZEY="
+    }
+  },
+  {
+    "model": "app.Member",
+    "pk": 3,
+    "fields": {
+      "number": 3,
+      "name": "Saru",
+      "full_name": "里中　裕翔",
+      "email": "Yuto@exsample.com",
+      "birthday": "1981-12-01",
+      "gender": 0,
+      "administrator": false,
+      "password":  "pbkdf2_sha256$24000$yDukyZQPKmt6$8AbdF40dcdXvRATbgPeftWzM5GVCecrv1Ceo3B/RZEY="
+    }
+  },
+  {
+    "model": "app.Member",
+    "pk": 4,
+    "fields": {
+      "number": 4,
+      "name": "Kyouko",
+      "full_name": "鈴木　今日子",
+      "email": "kyouko@exsample.com",
+      "birthday": "1981-12-01",
+      "gender": 1,
+      "administrator": false,
+      "password":  "pbkdf2_sha256$24000$yDukyZQPKmt6$8AbdF40dcdXvRATbgPeftWzM5GVCecrv1Ceo3B/RZEY="
+    }
+  },
+  {
+    "model": "app.Article",
+    "pk": 1,
+    "fields": {
+      "title": "練習試合の結果1",
+      "body": "Sunflowerが5対2で梅北タイガースに勝利。\n2回表、6番渡辺の二塁打から7番佐藤、8番木下の連続タイムリーで2点先制。3回裏に同点に追いつかれるも、4回表、佐藤のソロホームランで逆転、8回表、ランナー二、三塁で3番里中がタイムリーツーベースを放ち2点を挙げ、ダメを押しました。\n投げては先発の鈴木が7回を2失点に抑え、大迫、北野とつないで逃げ切りました。\n",
+      "released_at": "2015-6-10 18:01:54",
+      "expired_at": "2022-6-10 18:01:54",
+      "member_only": false
+    }
+  },
+  {
+    "model": "app.Article",
+    "pk": 2,
+    "fields": {
+      "title": "練習試合の結果2",
+      "body": "Sunflowerが5対2で梅北タイガースに勝利。\n2回表、6番渡辺の二塁打から7番佐藤、8番木下の連続タイムリーで2点先制。3回裏に同点に追いつかれるも、4回表、佐藤のソロホームランで逆転、8回表、ランナー二、三塁で3番里中がタイムリーツーベースを放ち2点を挙げ、ダメを押しました。\n投げては先発の鈴木が7回を2失点に抑え、大迫、北野とつないで逃げ切りました。\n",
+      "released_at": "2015-7-10 18:01:54",
+      "expired_at": "2022-6-10 18:01:54",
+      "member_only": false
+    }
+  },
+  {
+    "model": "app.Article",
+    "pk": 3,
+    "fields": {
+      "title": "練習試合の結果3",
+      "body": "Sunflowerが5対2で梅北タイガースに勝利。\n2回表、6番渡辺の二塁打から7番佐藤、8番木下の連続タイムリーで2点先制。3回裏に同点に追いつかれるも、4回表、佐藤のソロホームランで逆転、8回表、ランナー二、三塁で3番里中がタイムリーツーベースを放ち2点を挙げ、ダメを押しました。\n投げては先発の鈴木が7回を2失点に抑え、大迫、北野とつないで逃げ切りました。\n",
+      "released_at": "2016-1-10 18:01:54",
+      "expired_at": "2022-6-10 18:01:54",
+      "member_only": true
+    }
+  },
+  {
+    "model": "app.Article",
+    "pk": 4,
+    "fields": {
+      "title": "練習試合の結果4",
+      "body": "Sunflowerが5対2で梅北タイガースに勝利。\n2回表、6番渡辺の二塁打から7番佐藤、8番木下の連続タイムリーで2点先制。3回裏に同点に追いつかれるも、4回表、佐藤のソロホームランで逆転、8回表、ランナー二、三塁で3番里中がタイムリーツーベースを放ち2点を挙げ、ダメを押しました。\n投げては先発の鈴木が7回を2失点に抑え、大迫、北野とつないで逃げ切りました。\n",
+      "released_at": "2016-2-10 18:01:54",
+      "expired_at": "2022-6-10 18:01:54",
+      "member_only": false
+    }
+  },
+  {
+    "model": "app.Article",
+    "pk": 5,
+    "fields": {
+      "title": "練習試合の結果5",
+      "body": "Sunflowerが5対2で梅北タイガースに勝利。\n2回表、6番渡辺の二塁打から7番佐藤、8番木下の連続タイムリーで2点先制。3回裏に同点に追いつかれるも、4回表、佐藤のソロホームランで逆転、8回表、ランナー二、三塁で3番里中がタイムリーツーベースを放ち2点を挙げ、ダメを押しました。\n投げては先発の鈴木が7回を2失点に抑え、大迫、北野とつないで逃げ切りました。\n",
+      "released_at": "2016-2-12 18:01:54",
+      "expired_at": "2022-6-10 18:01:54",
+      "member_only": false
+    }
+  },
+  {
+    "model": "app.Article",
+    "pk": 6,
+    "fields": {
+      "title": "練習試合の結果6",
+      "body": "Sunflowerが5対2で梅北タイガースに勝利。\n2回表、6番渡辺の二塁打から7番佐藤、8番木下の連続タイムリーで2点先制。3回裏に同点に追いつかれるも、4回表、佐藤のソロホームランで逆転、8回表、ランナー二、三塁で3番里中がタイムリーツーベースを放ち2点を挙げ、ダメを押しました。\n投げては先発の鈴木が7回を2失点に抑え、大迫、北野とつないで逃げ切りました。\n",
+      "released_at": "2016-2-20 18:01:54",
+      "expired_at": "2022-6-10 18:01:54",
+      "member_only": false
+    }
+  },
+  {
+    "model": "app.Article",
+    "pk": 7,
+    "fields": {
+      "title": "練習試合の結果7",
+      "body": "Sunflowerが5対2で梅北タイガースに勝利。\n2回表、6番渡辺の二塁打から7番佐藤、8番木下の連続タイムリーで2点先制。3回裏に同点に追いつかれるも、4回表、佐藤のソロホームランで逆転、8回表、ランナー二、三塁で3番里中がタイムリーツーベースを放ち2点を挙げ、ダメを押しました。\n投げては先発の鈴木が7回を2失点に抑え、大迫、北野とつないで逃げ切りました。\n",
+      "released_at": "2016-3-1 18:01:54",
+      "expired_at": "2022-6-10 18:01:54",
+      "member_only": false
+    }
+  },
+  {
+    "model": "app.Article",
+    "pk": 8,
+    "fields": {
+      "title": "練習試合の結果8",
+      "body": "Sunflowerが5対2で梅北タイガースに勝利。\n2回表、6番渡辺の二塁打から7番佐藤、8番木下の連続タイムリーで2点先制。3回裏に同点に追いつかれるも、4回表、佐藤のソロホームランで逆転、8回表、ランナー二、三塁で3番里中がタイムリーツーベースを放ち2点を挙げ、ダメを押しました。\n投げては先発の鈴木が7回を2失点に抑え、大迫、北野とつないで逃げ切りました。\n",
+      "released_at": "2016-3-5 18:01:54",
+      "expired_at": "2022-6-10 18:01:54",
+      "member_only": false
+    }
+  },
+  {
+    "model": "app.Article",
+    "pk": 9,
+    "fields": {
+      "title": "練習試合の結果9",
+      "body": "Sunflowerが5対2で梅北タイガースに勝利。\n2回表、6番渡辺の二塁打から7番佐藤、8番木下の連続タイムリーで2点先制。3回裏に同点に追いつかれるも、4回表、佐藤のソロホームランで逆転、8回表、ランナー二、三塁で3番里中がタイムリーツーベースを放ち2点を挙げ、ダメを押しました。\n投げては先発の鈴木が7回を2失点に抑え、大迫、北野とつないで逃げ切りました。\n",
+      "released_at": "2016-5-12 18:01:54",
+      "expired_at": "2022-6-10 18:01:54",
+      "member_only": false
+    }
+  }
+]

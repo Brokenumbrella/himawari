@@ -1,0 +1,8 @@
+<p class="vote">
+    {% for vote in votes %}
+        ★{{ vote.member }}
+    {% endfor %}
+    {% if show_vote_btn %}
+        <a href="{% url "like_entry" entry.pk %}">★いいね</a>
+    {% endif %}
+</p>

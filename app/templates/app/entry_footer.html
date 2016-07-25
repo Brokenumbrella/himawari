@@ -1,0 +1,17 @@
+<p class="article_footer">
+    {% if current_user and current_user.is_authenticated %}
+        {% if entry.status == 'public' %}
+            公開 |
+        {% elif entry.status == 'member_only' %}
+            会員限定 |
+        {% else %}
+            下書き |
+        {% endif %}
+        {% if current_user.pk == entry.member.pk %}
+            <a href="{% url 'entry_edit' entry.pk %}">編集</a> |
+            <a href="{% url 'entry_delete' entry.pk %}">削除</a> |
+        {% endif %}
+    {% endif %}
+    by <a href="{% url 'entry_member' entry.member.pk %}">{{entry.member.name}}</a> |
+    {{ entry.posted_at|date:"Y/m/d G:i" }}
+</p>

@@ -1,0 +1,25 @@
+﻿<!DOCTYPE html>
+
+<html lang="ja" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{ title }} - Asagao</title>
+    {% load staticfiles %}
+    <link rel="stylesheet" type="text/css" href="{% static 'app/css/application.css' %}" />
+    <link rel="stylesheet" type="text/css" href="{% static 'app/css/table.css' %}" />
+</head>
+<body>
+    <div id="container">
+        {% include 'app/header.html' %}
+        <div id="content" class="container body-content">
+
+    <h3 class="page-header">ログアウトしました</h3>
+
+        </div>
+        <div id="footer">
+            {% include 'app/footer.html' %}
+        </div>
+    </div>
+</body>
+</html>

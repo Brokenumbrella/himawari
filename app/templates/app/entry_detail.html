@@ -1,0 +1,17 @@
+{% extends "app/layout.html" %}
+
+{% block content %}
+
+<h1>{{ title }}</h1>
+
+{% if current_user and current_user.is_authenticated and current_user.pk == entry.member.pk %}
+    <p><a href="{% url "entry_edit" entry.pk %}">編集</a></p>
+{% endif %}
+
+<h2>{{ entry.title }}</h2>
+{{ entry.body|linebreaksbr }}
+
+{% include 'app/entry_footer.html' %}
+{% include 'app/entry_votes.html' %}
+
+{% endblock %}

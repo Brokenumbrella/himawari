@@ -1,0 +1,50 @@
+{% extends "app/layout.html" %}
+
+{% block content %}
+
+<h1>{{ title }}</h1>
+
+{% if current_user and current_user.is_authenticated %}
+    <p><a href="{% url "account_edit" member_id=member.pk %}">アカウント情報の編集</a></p>
+{% endif %}
+
+<table class="attr">
+    <tr>
+        <th>画像</th>
+        <td>
+        {% if memberimage %}
+            <img src="{{ memberimage.image.url }}" alt="{{ memberimage.image.url }}" width="120" />
+        {% endif %}
+        </td>
+    </tr>
+    <tr>
+        <th width="150">背番号</th>
+        <td>{{ member.number }}</td>
+    </tr>
+    <tr>
+        <th>ユーザー名</th>
+        <td>{{ member.name }}</td>
+    </tr>
+    <tr>
+        <th>氏名</th>
+        <td>{{ member.full_name }}</td>
+    </tr>
+    <tr>
+        <th>性別</th>
+        <td>{% if member.gender == 0 %} 男 {% else %} 女 {% endif %}</td>
+    </tr>
+    <tr>
+        <th>誕生日</th>
+        <td>{{ member.birthday|date:"Y年m月d日" }}</td>
+    </tr>
+    <tr>
+        <th>メールアドレス</th>
+        <td>{{ member.email }}</td>
+    </tr>
+    <tr>
+        <th>管理者</th>
+        <td>{% if member.administrator == 0 %} － {% else %} ○ {% endif %}</td>
+    </tr>
+</table>
+
+{% endblock %}

@@ -1,0 +1,36 @@
+{% extends "app/layout.html" %}
+
+{% block content %}
+
+<h1>{{ title }}</h1>
+
+{% if current_user and current_user.is_authenticated %}
+    <p><a href='{% url 'article_new' %}'>新規作成</a></p>
+{% endif %}
+
+{% if articles %}
+<table class="list">
+    <tr>
+        <th>タイトル</th>
+        <th>日時</th>
+        {% if current_user and current_user.is_authenticated %}
+            <th>操作</th>
+        {% endif %}
+    </tr>
+    {% for article in article_list %}
+    <tr>
+        <td><a href="{% url 'article_detail' article.pk %}" >{{ article.title }}</a></td>
+        <td>{{ article.released_at|date:"Y/m/d G:i" }}</td>
+        {% if current_user and current_user.is_authenticated %}
+            <td><a href="{% url "article_edit" article.pk %}">編集</a> | <a href="{% url 'article_delete' article.pk %}">削除</a></td>
+        {% endif %}
+    </tr>
+    {% endfor %}
+</table>
+{% else %}
+<p>ニュースがありません。</p>
+{% endif %}
+
+{% include 'app/pagination.html' %}
+
+{% endblock %}

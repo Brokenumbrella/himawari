@@ -1,0 +1,18 @@
+{% include 'app/login_form.html' %}
+
+<h2>最新ニュース</h2>
+<ul>
+    {% for article in articles %}
+        <li><a href="{% url 'article_detail' article.pk %}">{{ article }}</a></li>
+    {% endfor %}
+</ul>
+
+<h2>会員のブログ</h2>
+<ul>
+    {% load custom_filter %}
+    {% for entry in blogs %}
+        <li><a href="{% url 'entry_detail' entry.pk %}">{{ entry.title|cut_text:12 }}</a> by 
+            <a href="{% url 'entry_member' entry.member.pk %}">{{entry.member.name}}</a>
+        </li>
+    {% endfor %}
+</ul>

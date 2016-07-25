@@ -1,0 +1,24 @@
+{% if auth_form and current_user and not current_user.is_authenticated %}
+
+<h2>ログイン</h2>
+
+<form method="post" action="{% url 'login' %}">
+{% csrf_token %}
+<table>
+<tr>
+    <td>ユーザー名:</td>
+    <td>{{ auth_form.username }}</td>
+</tr>
+<tr>
+    <td>{{ auth_form.password.label_tag }}</td>
+    <td>{{ auth_form.password }}</td>
+</tr>
+<tr>
+    <td colspan="2", style="text-align: center"><input type="submit" value="ログイン" /></td>
+</tr>
+</table>
+
+<input type="hidden" name="next" value="{{ next }}" />
+</form>
+
+{% endif %}
